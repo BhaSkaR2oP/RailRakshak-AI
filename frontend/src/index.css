@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+/* ============================================================
+   RailRakshak AI — Design Tokens (from Stitch)
+   Theme: Industrial Command Center, Dark Mode
+   ============================================================ */
+
+@theme {
+  /* ---- Surface Layers ---- */
+  --color-surface-lowest: #080f17;
+  --color-surface-base: #0a0c10;
+  --color-surface: #0d141d;
+  --color-surface-low: #151c25;
+  --color-surface-container: #192029;
+  --color-surface-high: #232a34;
+  --color-surface-highest: #2e353f;
+  --color-surface-bright: #333a44;
+
+  /* ---- Borders ---- */
+  --color-border: #2a2f3a;
+  --color-border-strong: #45474b;
+  --color-outline: #909095;
+
+  /* ---- Text ---- */
+  --color-text-primary: #dce3f0;
+  --color-text-secondary: #c6c6cb;
+  --color-text-muted: #9ca3af;
+  --color-text-dim: #6b7280;
+
+  /* ---- Semantic Safety Colors ---- */
+  --color-critical: #ff3b30;
+  --color-high: #ff9500;
+  --color-medium: #ffcc00;
+  --color-low: #34c759;
+  --color-info: #4cd6ff;
+  --color-error: #ff3b30;
+
+  /* ---- Accent ---- */
+  --color-accent: #c6c6cc;
+  --color-accent-dim: #797a7f;
+
+  /* ---- Spacing (from Stitch) ---- */
+  --spacing-panel: 16px;
+  --spacing-gutter: 12px;
+  --spacing-stack-tight: 4px;
+  --spacing-stack-md: 12px;
+  --spacing-stack-lg: 24px;
+  --spacing-grid-margin: 24px;
+
+  /* ---- Font Families ---- */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ---- Sidebar ---- */
+  --sidebar-width: 240px;
+  --topbar-height: 64px;
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+
+html {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Typography Utilities (matching Stitch design system)
+   ============================================================ */
+
+.text-display-metrics {
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.text-headline-lg {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.text-headline-md {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.text-body-md {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.text-body-sm {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.text-label-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.text-table-data {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.text-kpi-value {
+  font-family: var(--font-sans);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Component Utilities
+   ============================================================ */
+
+/* Panel — the primary container surface */
+.panel {
+  background-color: var(--color-surface-low);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--spacing-panel);
+}
+
+/* Panel with top accent border */
+.panel-accent-critical { border-top: 2px solid var(--color-critical); }
+.panel-accent-high { border-top: 2px solid var(--color-high); }
+.panel-accent-medium { border-top: 2px solid var(--color-medium); }
+.panel-accent-low { border-top: 2px solid var(--color-low); }
+.panel-accent-info { border-top: 2px solid var(--color-info); }
+
+/* Status Badges — ghost style from Stitch design system */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+
+.badge-critical {
+  color: var(--color-critical);
+  border: 1px solid var(--color-critical);
+  background: rgba(255, 59, 48, 0.1);
+}
+
+.badge-high {
+  color: var(--color-high);
+  border: 1px solid var(--color-high);
+  background: rgba(255, 149, 0, 0.1);
+}
+
+.badge-medium {
+  color: var(--color-medium);
+  border: 1px solid var(--color-medium);
+  background: rgba(255, 204, 0, 0.1);
+}
+
+.badge-low {
+  color: var(--color-low);
+  border: 1px solid var(--color-low);
+  background: rgba(52, 199, 89, 0.1);
+}
+
+.badge-demo {
+  color: var(--color-info);
+  border: 1px solid var(--color-info);
+  background: rgba(76, 214, 255, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-surface-bright);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--color-border-strong);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-surface-highest);
+}
+
+.btn-critical {
+  background-color: var(--color-critical);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+.btn-critical:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-secondary);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+.btn-outline:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background: var(--color-surface-base) !important;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in {
+  animation: slide-in-right 300ms ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 400ms ease-out forwards;
+}
+
+/* Stagger children animation */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in 400ms ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 250ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Loading skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface-container) 25%, var(--color-surface-high) 50%, var(--color-surface-container) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
