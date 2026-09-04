@@ -1,0 +1,16 @@
+# FastAPI Web API Framework & Server
+fastapi>=0.110.0
+uvicorn>=0.28.0
+pydantic>=2.0.0
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+
+# Computer Vision & Machine Learning
+ultralytics>=8.1.0
+opencv-python-headless>=4.8.0
+pillow>=10.0.0
+numpy>=1.24.0
+
+# Optional Demo Dependencies
+flask>=3.0.0
+flask-cors>=4.0.0

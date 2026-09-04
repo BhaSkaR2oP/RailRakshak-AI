@@ -1,0 +1,11 @@
+{
+  "name": "railrakshak-ai-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RailRakshak AI project runner",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "frontend": "npm --prefix frontend run dev"
+  }
+}
